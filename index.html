@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drag and Drop Example</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 300px;
+    }
+    
+    .drag-item {
+      padding: 10px;
+      margin: 5px;
+      background-color: #0bb6ea;
+      cursor: move;
+    }
+    
+    .drop-container {
+      padding: 10px;
+      width: 200px;
+      height: 200px;
+      border: 2px dashed #440ecc;
+    }
+    
+    .success-message {
+      margin-top: 10px;
+      color: green;
+      display: none;
+    }
+    
+    .reset-button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="drop-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p><strong>Drop Here</strong></p>
+    </div>
+    <div id="drag-container">
+      <div class="drag-item" draggable="true" ondragstart="drag(event)">Item 1</div>
+      <div class="drag-item" draggable="true" ondragstart="drag(event)">Item 2</div>
+      <div class="drag-item" draggable="true" ondragstart="drag(event)">Item 3</div>
+      <div class="drag-item" draggable="true" ondragstart="drag(event)">Item 4</div>
+    </div>
+  </div>
+  <p class="success-message">Item dropped successfully!</p>
+  <button class="reset-button" onclick="reset()">Reset</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
